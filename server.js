@@ -4,6 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+// Important to require dotenv before any
+// module that depends on .env file 
+require('dotenv').config();
+// CONNECT TO ATLAS/MONGO AFTER DOTENV HAS PROCESSED
+require('./config/database');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
