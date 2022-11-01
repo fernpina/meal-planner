@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport');
+const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,7 +12,7 @@ router.get('/auth/google', passport.authenticate(
   'google',
   {
     scope: ['profile', 'email'],
-    pompt: "select_account"
+    //pompt: "select_account"
   }
 ));
 
@@ -19,8 +20,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/bundles',
-    failureRedirect: '/bundles'
+    successRedirect: '/',
+    failureRedirect: '/'
   }
 ));
 

@@ -3,8 +3,13 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// require the session middleware
 var session = require('express-session');
+// method override for our edit and delete functionality
+var methodOverride = require('method-override');
+// require the passport
 var passport = require('passport');
+
 
 // Important to require dotenv before any
 // module that depends on .env file 
@@ -16,6 +21,8 @@ require('./config/passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var mealsRouter = require('./routes/meals');
+var plansRouter = require('./routes/plans');
 
 var app = express();
 
@@ -27,14 +34,13 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
+// mount the session middleware
 app.use(session({
   secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true
 }));
-// app.use(session({... code above
+// mount our passport
 app.use(passport.initialize());
 app.use(passport.session());
 
@@ -44,8 +50,20 @@ app.use(function (req, res, next) {
   next();
 });
 
+
+
+
+
+app.use(methodOverride('_method'));
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/plans', plansRouter);
+app.use('/', mealsRouter);
+
+
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
