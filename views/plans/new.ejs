@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+<form id="create-plan" action="/Plans" method="POST">
+    <label>Plans:</label>
+    <input type="text" name="Plans">
+    <label>type:</label>
+    <select name="type1">
+        <option value="High Protien">High Protien</option>
+        <option value="Low Carb">Low Carb</option>
+        <option value="Cut">Cut</option>
+        <option value="Bulk">Bulk</option>
+    </select>
+    <select name="type2">
+        <option value="High Protien">High Protien</option>
+        <option value="Low Carb">Low Carb</option>
+        <option value="Cut">Cut</option>
+        <option value="Bulk">Bulk</option>
+    </select>
+    <input type="submit" value="Add Plans">
+</form>
+
+<%- include('../partials/footer') %>
