@@ -31,7 +31,7 @@ const planSchema = new Schema({
     category: {
         type: String,
         required: true,
-        enum: ['Bulk', 'Cut', 'High Protien', 'Low Carb'];
+        enum: ['Bulk', 'Cut', 'High Protien', 'Low Carb']
     },
     user: {
         type: Schema.Types.ObjectId,
