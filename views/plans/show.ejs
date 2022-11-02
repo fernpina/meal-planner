@@ -1,5 +1,9 @@
 <%- include('../partials/header') %>
 <section it="Plan-show-page">
     <div>Plan Name:</div>
+    <div><%= plan.plan %></div>
+  <div>category: </div>
+  <div><%= plan.category %></div>
+  <a href="/plans/<%= plan._id%>/edit"> Edit Plan</a>
 </section>
 <%- include('../partials/footer') %>

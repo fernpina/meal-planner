@@ -6,7 +6,7 @@ const Plan = require('../models/plan');
 module.exports = {
     show,
     new: newMeal,
-    create
+    create,
 }
 
 
@@ -17,12 +17,6 @@ function show(req, res) {
         })
     })
 }
-function create(req, res) {
-    req.body.plan = req.params.id;
-    Meal.create(req.body, function(err, meal){
-        res.redirect(`/plans/${req.params.id}`);
-    });
-}
 
 function newMeal(req, res) {
     Meal.find({})
@@ -31,6 +25,22 @@ function newMeal(req, res) {
         res.render('meals/new', {
             title: 'Add Meal',
             meals
+        });
+    });
+}
+
+function create(req, res) {
+    req.body.user = req.params.id;
+    Meal.create(req.body, function(err, meal){
+        res.redirect(`/plans/${req.params.id}`);
+    });
+}
+
+function addToMeal(req, res) {
+    Meal.findById(req.params.id, function(err, meal) {
+        meal.contents.push(req.body.meals);
+        meal.save(function(err) {
+            res.redirect(`/plans/${plan._id}`);
         });
     });
 }

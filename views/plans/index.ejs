@@ -1,17 +1,32 @@
 <%- include('../partials/header') %>
 
-<div class="user-welcome-container">
-    <div class="user-welcome">
-    </div>
-    <h2>MEAL PLANNER!</h2>
-    <div class="user-select">
-    </div>
-</div>
-<div class="landing-page-container">
-   
-</div>
-<div class="new-plan">
-<a href="/plans/new"> Get your plan now!</a>
-</div>
+<table id="plans">
+    <thead>
+        <tr>
+            <th>Plan Name</th>
+            <th>Plan Type</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% plans.forEach(function(m) { %>
+            <tr>
+                <td><%= m.name %></td>
+                <td><%= m.category %></td>
+                <td>
+                    <form 
+                    action="/plans/<%= m._id %>?_method=DELETE" 
+                    method="POST"
+                    class="delete-form">
+                        <button type="submit">Delete Plan</button>
+                    </form>
+                    <td><button><a href="/plans/<%= m._id %>">Details</a></button></td>
+                </td>
+            </tr>
+            <% }); %>
+    </tbody>
+</table>
+<br><br>
+<hr>
+<br>
 
 <%- include('../partials/footer') %>

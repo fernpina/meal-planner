@@ -32,18 +32,21 @@ const planSchema = new Schema({
     category: {
         type: String,
         required: true,
-        enum: ['Bulk', 'Cut', 'High Protien', 'Low Carb']
+        enum: ['Bulk', 'Cut', 'High Protien', 'Low Carb'],
+        default: 'Bulk',
+        available: {
+            type: Boolean,
+            default: false
+        }
     },
-    user: {
-        type: Schema.Types.ObjectId,
-    },
-    
-    userName: String,
-    userAvatar: String
+  contents: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Meals'
+  }]
 }, {
-    reviews: [reviewSchema]
+    
 }, {
     timestamps: true
-});
+})
 
 module.exports = mongoose.model('Plan', planSchema);
