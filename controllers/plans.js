@@ -17,9 +17,9 @@ function index(req, res) {
 // Detail page
 function show(req, res) {
     Plan.findById(req.params.id, function(err, plan){
-        // Meal.find({ Plan: req.params.id }, function(err, plan){
-            res.render('plans/show', { title: 'Macros', plan });
-        // });
+         Meal.find({ plan: plan._id }, function(err, meals){
+            res.render('plans/show', { title: 'Macros', plan, meals });
+         });
     });
 }
 

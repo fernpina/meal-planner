@@ -13,9 +13,10 @@
 <body>
   <nav class="navbar navbar-expand-lg sticky-top">
     <a href="/" class="navbar-brand"></a>
-        <a href="/meals/new">Meal Plans</a>
         <div class="container">
         <% if (user) { %>
+          <a href="/plans">Meal Plans</a>
+          <a href="/plans/new">Add New Meal Plans</a>
           <a href="/logout">LOG OUT</a>
  
         <% } else { %>

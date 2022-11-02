@@ -2,14 +2,28 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const mealSchema = new Schema ({
-    Protein: {
+    name: {
         type: String,
     },
-    Carbs: {
+    description: {
         type: String,
     },
-    Fats: {
-        type: String
+    protein: {
+        type: Number,
+    },
+    carbs: {
+        type: Number,
+    },
+    fats: {
+        type: Number,
+    },
+    img: {
+        type: String,
+    },
+    plan: {
+        type:  Schema.Types.ObjectId,
+        required: true,
+        ref: 'Plan'
     }
 });
 

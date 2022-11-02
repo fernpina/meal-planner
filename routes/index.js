@@ -12,7 +12,7 @@ router.get('/auth/google', passport.authenticate(
   'google',
   {
     scope: ['profile', 'email'],
-    //pompt: "select_account"
+    pompt: "select_account"
   }
 ));
 

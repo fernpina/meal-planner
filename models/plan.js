@@ -10,7 +10,7 @@ const reviewSchema = new Schema ({
         type: Number,
         min: 1,
         max: 5,
-        defailt: 5
+        default: 5
     },
     user: {
         type: Schema.Types.ObjectId,
@@ -27,12 +27,7 @@ const planSchema = new Schema({
     Plan: {
         type: String,
     },
-    Chicken: [{
-        type: Schema.Types.ObjectId,
-    }],
-    Steak: [{
-        type: Schema.Types.ObjectId,
-    }],
+    
     User: {
         type: Schema.Types.ObjectId,
     },
