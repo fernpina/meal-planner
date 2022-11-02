@@ -24,11 +24,16 @@ const reviewSchema = new Schema ({
 });
 
 const planSchema = new Schema({
-    Plan: {
+    plan: {
         type: String,
     },
     
-    User: {
+    category: {
+        type: String,
+        required: true,
+        enum: ['Bulk', 'Cut', 'High Protien', 'Low Carb'];
+    },
+    user: {
         type: Schema.Types.ObjectId,
     },
     userName: String,
