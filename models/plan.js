@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const meal = require('./meal');
 const Schema = mongoose.Schema;
 
 const reviewSchema = new Schema ({
@@ -36,6 +37,7 @@ const planSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
     },
+    
     userName: String,
     userAvatar: String
 }, {
