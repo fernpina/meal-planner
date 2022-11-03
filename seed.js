@@ -15,26 +15,26 @@ romise.all([p1, p2])
     // results will be an array
     // of two result objects
     console.log(results);
-    return Performer.create(data.performers);
+    return Meal.create(data.meals);
   })
-  .then(function(performers) {
-    console.log(performers);
-    return Movie.create(data.movies);
+  .then(function(meals) {
+    console.log(meals);
+    return Plan.create(data.plans);
   })
-  .then(function(movies) {
-    console.log(movies);
+  .then(function(plans) {
+    console.log(plans);
     return Promise.all([
-      Performer.findOne({name: 'Mark Hamill'}),
-      Movie.findOne({title: /Star Wars/})
+      Meal.findOne({name: 'Pancakes'}),
+      Plan.findOne({plan: /Turkey Sandwich/})
     ]);
   })
   .then(function(results) {
     const mark = results[0];
-    const starWars = results[1];
-    starWars.cast.push(mark._id);
-    return starWars.save();
+    const turkeySandwich = results[1];
+    turkeySandwich.contents.push(mark._id);
+    return turkeySandwich.save();
   })
-  .then(function(starWars) {
-    console.log(starWars);
+  .then(function(turkeySandwich) {
+    console.log(turkeySandwich);
   })
   .then(process.exit);

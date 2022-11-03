@@ -1,19 +1,37 @@
-<%- include('../partials/header') %>
+<!-- <%- include('../partials/header') %>
 
-<form id="new-meal-item" action="/meals" method="POST">
+<form id="new-meals" action="/meals" method="POST">
     <table>
         <label>Name:</label>
         <input type="text" name="name"><br>
-        <label>Price:</label>
-        <input type="number" name="price"><br>
-        <label>Add Ons:</label>
-        <input type="text" name="addOn"><br>
         <label>Description:</label>
-        <textarea name="description" cols="30" rows="10"></textarea><br>
-        <label>Image link:</label>
-        <input type="text" name="image"><br>
-        <input type="submit" value="Add Meal">
+        <input type="number" name="description"><br>
+        <label>Protien:</label>
+        <input type="text" name="protien"><br>
+        <label>Carbs:</label>
+        <input type="text" name="carbs"><br>
+        <label>Fats:</label>
+        <input type="text" value="fats">
     </table>
+</form>
+
+<%- include('../partials/footer') %> -->
+
+<%- include('../partials/header') %>
+
+<div>Before adding, please ensure that the Performer is not in the following list:</div>
+<section id="badge-container">
+  <% meals.forEach(function(m) { %>
+    <article class="badge"><%= m.name %></article>
+  <% }) %>
+</section>
+
+<form id="add-meal-form" action="/meals" method="POST">
+  <label>Name:</label>
+  <input type="text" name="name">
+  <label>Born:</label>
+  <input type="date" name="born">
+  <input type="submit" value="Add Meal">
 </form>
 
 <%- include('../partials/footer') %>

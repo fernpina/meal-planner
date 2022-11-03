@@ -1,15 +1,18 @@
 <%- include('../partials/header') %>
 
-<section id="Meal Plans!">
-    <div>Name:</div>
-    <div><%= meal.option %></div>
-    <div>Carbs</div>
-    <div><%= meal.option %></div>
-    <div>Fats</div>
-    <div><%= meal.option %></div>
-    <div>Protiens</div>
-    <div><%= %></div>
-</section>
+<form id="create-meal" action="/meals" method="POST">
+    <label>Plans:</label>
+    <input type="text" name="meals">
+    <label>type:</label>
+    <select name="category">
+        <option value="High Protien">High Protien</option>
+        <option value="Low Carb">Low Carb</option>
+        <option value="Cut">Cut</option>
+        <option value="Bulk">Bulk</option>
+    </select>
+    <input type="submit" value="Add Plans">
+</form>
+
 
 <%- include('../partials/footer') %>
 

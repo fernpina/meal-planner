@@ -7,6 +7,7 @@ module.exports = {
     show,
     new: newMeal,
     create,
+    addToMeal
 }
 
 

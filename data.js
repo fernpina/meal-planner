@@ -9,4 +9,9 @@ exports.meals = [
     {name: 'Beer', description: 'fun', protein: '1', carbs: '20', fats: '8'},
 ];
 
-
+exports.plans = [
+    {plan: 'Dinner', category: 'Bulk', contents: 'Steak and Mash Potatoes'},
+    {plan: 'Lunch', category: 'Cut', contents: 'Turkey Sandwich'},
+    {plan: 'Breakfast', category: 'Low Carb', contents: 'Eggs and Bacon'},
+    {plan: 'Snack', category: 'High Protien', contents: 'Protien Shake'}
+];
