@@ -7,15 +7,9 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 //Similar to performers in movies, starts with path of '/'
 router.get('/plans/:id/meals/new', ensureLoggedIn, mealsCtrl.new);
+router.get('/meals/:id', mealsCtrl.show);
 router.post('/plans/:id/meals', mealsCtrl.create);
-router.get('/meals/:id', ensureLoggedIn, mealsCtrl.show);
+router.delete('/plans/:planid/meals/:id', ensureLoggedIn, mealsCtrl.delete);
 
-// router.get('/', mealsCtrl.index);
- router.get('/new', ensureLoggedIn, mealsCtrl.new);
- router.get('/:id', mealsCtrl.show);
- router.post('/', ensureLoggedIn, mealsCtrl.create);
-// router.get('/:id/edit', ensureLoggedIn, mealsCtrl.edit);
-// router.put('/:id', ensureLoggedIn, mealsCtrl.update);
-// router.delete('/:id', ensureLoggedIn, mealsCtrl.delete);
 
 module.exports = router;

@@ -5,21 +5,25 @@
   <div>category: </div>
   <div><%= plan.category %></div>
   <a href="/plans/<%= plan._id%>/edit"> Edit Plan</a>
-  <ul>
-    <%- plan.contents.map(m =>
-      `<li>${m.name} <small>${m.description.toLocaleDateString()}</small></li>`
-    ).join('') %>
-  </ul>
 </section>
 
-<form id="add-meal-to-plan" action="/plans/<%= plan._id %>/meals" method="POST">
-  <select name="mealId">
-    <!-- Emit an option for each performer -->
-    <%- meals.map(m => 
-      `<option value="${m._id}">${m.name}</option>`
-    ).join('') %>
-  </select>
-  <button type="submit">Add to Plan</button>
-</form>
+<button><a href="/plans/<%= plan._id %>/meals/new">New Meal</a></button>
+
+<% if (meals.length) { %>
+  <% meals.forEach(function(t) { %>
+      <br><tr>
+          <td><%= t.name %></td>
+          <td><%= t.description %></td>
+          <td><%= t.protein %></td>
+          <td><%= t.carbs %></td>
+          <td><%= t.fats %></td>
+      </tr>
+      <% }); %>
+  <tbody>
+  </tbody>
+</table>
+<% } else { %>
+<br><h5>No Current Meals</h5>
+<% } %>
 
 <%- include('../partials/footer') %>
