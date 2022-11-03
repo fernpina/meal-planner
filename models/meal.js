@@ -17,9 +17,6 @@ const mealSchema = new Schema ({
     fats: {
         type: Number,
     },
-    img: {
-        type: String,
-    },
     plan: {
         type:  Schema.Types.ObjectId,
         required: true,

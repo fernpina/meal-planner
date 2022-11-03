@@ -1,11 +1,9 @@
-<%- include('../partials/header') %>
+<!-- <%- include('../partials/header') %>
 
 <% meals.forEach(function(mi) { %>
     <tr>
         <td><%= mi.name %></td>
-        <td>$<%= mi.price %></td>
         <td><%= mi.description %></td>
-        <td><%= mi.addOn %></td>
             <td>
                 <form 
                 action="/meals/<%= mi.id %>?_method=DELETE" 
@@ -24,16 +22,57 @@
     <table>
         <label>Name:</label>
         <input type="text" name="name"><br>
-        <label>Price:</label>
-        <input type="number" name="price"><br>
-        <label>Add Ons:</label>
-        <input type="text" name="addOn"><br>
         <label>Description:</label>
         <textarea name="description" cols="30" rows="10"></textarea><br>
-        <label>Image link:</label>
-        <input type="text" name="image"><br>
-        <input type="submit" value="Add Dish">
+        <input type="submit" value="Add Meal">
     </table>
 </form>
 
+<%- include('../partials/footer') %> -->
+
+<%- include('../partials/header') %>
+
+<% if (user?._id.equals(meals.user)) { %>
+<table id="meals-table">
+    <thead>
+        <th>Name</th>
+        <th>Description</th>
+    </thead>
+    <tbody>
+    <% meals.forEach(function(mi) { %>
+        <tr>
+            <td><%= mi.name %></td>
+            <td><%- mi.description.replaceAll('\n', '<br>') %></td>
+            <td>
+                <form action="/meals/<%= mi.id %>/edit" 
+                    method="GET" 
+                    class="edit-form">
+                        <button type="submit">Edit meals</button>
+                    </form>
+            </td>
+            <td>
+                <form 
+                action="/meals/<%= mi.id %>?_method=DELETE" 
+                method="POST"
+                class="delete-form">
+                    <input type="submit" value="Delete Menu Item"></input>
+                </form>
+            </td>
+        </tr>
+        <% }); %>
+    </tbody>
+</table>
+<% } %>
+<br>
+<hr>
+<br>
+<form id="new-meals" action="/meals" method="POST">
+    <table>
+        <label>Name:</label>
+        <input type="text" name="name"><br>
+        <label>Description:</label>
+        <textarea name="description" cols="30" rows="6"></textarea><br>
+        <input type="submit" value="Add Meal">
+    </table>
+</form>
 <%- include('../partials/footer') %>
