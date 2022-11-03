@@ -1,5 +1,6 @@
 <%- include('../partials/header') %>
 
+<h2>Plans</h2>
 <table id="plans">
     <thead>
         <tr>
@@ -17,7 +18,7 @@
                     action="/plans/<%= m._id %>?_method=DELETE" 
                     method="POST"
                     class="delete-form">
-                        <button type="submit">Delete Plan</button>
+                        <button type="submit">Delete</button>
                     </form>
                     <td><button><a href="/plans/<%= m._id %>">Details</a></button></td>
                 </td>

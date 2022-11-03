@@ -1,37 +1,11 @@
-<!-- <%- include('../partials/header') %>
-
-<form id="new-meals" action="/meals" method="POST">
-    <table>
-        <label>Name:</label>
-        <input type="text" name="name"><br>
-        <label>Description:</label>
-        <input type="number" name="description"><br>
-        <label>Protien:</label>
-        <input type="text" name="protien"><br>
-        <label>Carbs:</label>
-        <input type="text" name="carbs"><br>
-        <label>Fats:</label>
-        <input type="text" value="fats">
-    </table>
-</form>
-
-<%- include('../partials/footer') %> -->
-
 <%- include('../partials/header') %>
-
-<div>Before adding, please ensure that the Performer is not in the following list:</div>
-<section id="badge-container">
-  <% meals.forEach(function(m) { %>
-    <article class="badge"><%= m.name %></article>
-  <% }) %>
-</section>
-
-<form id="add-meal-form" action="/meals" method="POST">
-  <label>Name:</label>
-  <input type="text" name="name">
-  <label>Born:</label>
-  <input type="date" name="born">
-  <input type="submit" value="Add Meal">
+        
+<form id="add-meal" action="/plans/<%= planId %>/meals" method="POST">
+    <label>Meal:</label>
+    <input type="string" name="seat" required pattern="[A-F][1-9]\d?">
+    <label>Price:</label>
+    <span>$</span><input type="number" name="price">
+    <input type="submit" value="Add Meal">
 </form>
 
 <%- include('../partials/footer') %>

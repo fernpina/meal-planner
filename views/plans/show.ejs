@@ -6,9 +6,20 @@
   <div><%= plan.category %></div>
   <a href="/plans/<%= plan._id%>/edit"> Edit Plan</a>
   <ul>
-    <%- plan.contents.map(p =>
-      `<li>${p.name} <small>${p.born.toLocaleDateString()}</small></li>`
+    <%- plan.contents.map(m =>
+      `<li>${m.name} <small>${m.description.toLocaleDateString()}</small></li>`
     ).join('') %>
   </ul>
 </section>
+
+<form id="add-meal-to-plan" action="/plans/<%= plan._id %>/meals" method="POST">
+  <select name="mealId">
+    <!-- Emit an option for each performer -->
+    <%- meals.map(m => 
+      `<option value="${m._id}">${m.name}</option>`
+    ).join('') %>
+  </select>
+  <button type="submit">Add to Plan</button>
+</form>
+
 <%- include('../partials/footer') %>
