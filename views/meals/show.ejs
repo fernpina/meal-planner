@@ -1,0 +1,38 @@
+<%- include('../partials/header') %>
+<section it="Meal-show-page">
+    <div>Meal:</div>
+    <div><%= meal.meal %></div>
+  <div>category: </div>
+  <div><%= plan.category %></div>
+  <a href="/meals/<%= meal._id%>/edit"> Edit Meal</a>
+
+
+</section>
+
+<!-- Using the RESTful route to send the book's id to the server -->
+<form action="/meals/<%= meal._id %>/comments" method="POST">
+  <!-- Be sure name attributes of inputs match the model properties -->
+  <input name="content">
+  <button type="submit">ADD COMMENT</button>
+</form>
+
+<button><a href="/plans/<%= plan._id %>/meals/new">New Meal</a></button>
+
+<% if (meals.length) { %>
+  <% meals.forEach(function(t) { %>
+      <br><tr>
+          <td><%= t.name %></td>
+          <td><%= t.description %></td>
+          <td><%= t.protein %></td>
+          <td><%= t.carbs %></td>
+          <td><%= t.fats %></td>
+      </tr>
+      <% }); %>
+  <tbody>
+  </tbody>
+</table>
+<% } else { %>
+<br><h5>No Current Meals</h5>
+<% } %>
+
+<%- include('../partials/footer') %>

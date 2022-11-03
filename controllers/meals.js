@@ -41,6 +41,7 @@ function create(req, res) {
     });
 }
 
+
 function deleteMeal(req, res) {
     Meal.findOneAndDelete(
         // Ensue that the book was created by the logged in user

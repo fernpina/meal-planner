@@ -2,6 +2,14 @@ const mongoose = require('mongoose');
 const meal = require('./meal');
 const Schema = mongoose.Schema;
 
+const commentSchema = new Schema({
+    content: {
+        type: String,
+        required: true,
+    }
+}, {
+    timestamps: true
+});
 const planSchema = new Schema({
     plan: {
         type: String,
@@ -17,10 +25,9 @@ const planSchema = new Schema({
             default: false
         }
     },
-  contents: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Meals'
-  }]
+    comments: [commentSchema]
+  
+  
 }, {
     
 }, {
