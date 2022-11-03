@@ -10,13 +10,13 @@
 <button><a href="/plans/<%= plan._id %>/meals/new">New Meal</a></button>
 
 <% if (meals.length) { %>
-  <% meals.forEach(function(t) { %>
+  <% meals.forEach(function(meal) { %>
       <br><tr>
-          <td><%= t.name %></td>
-          <td><%= t.description %></td>
-          <td><%= t.protein %></td>
-          <td><%= t.carbs %></td>
-          <td><%= t.fats %></td>
+          <td><%= meal.name %></td>
+          <td><%= meal.description %></td>
+          <td><%= meal.protein %></td>
+          <td><%= meal.carbs %></td>
+          <td><%= meal.fats %></td>
       </tr>
       <% }); %>
   <tbody>
@@ -26,11 +26,11 @@
 <br><h5>No Current Meals</h5>
 <% } %>
 
-<!-- Using the RESTful route to send the book's id to the server -->
+<!-- 
 <form action="/plans/<%= plan._id %>/comments" method="POST">
-  <!-- Be sure name attributes of inputs match the model properties -->
+  
   <input name="content">
   <button type="submit">COMMENTS</button>
-</form>
+</form> -->
 
 <%- include('../partials/footer') %>

@@ -32,11 +32,10 @@ function newMeal(req, res) {
 
 
 function create(req, res) {
-    req.body.user = req.params.id;
     req.body.user = req.user._id;
-    req.body.userName = req.user.name;
-    req.body.userAvatar = req.user.avatar;
+    req.body.plan = req.params.id;
     Meal.create(req.body, function (err, meal) {
+        console.log(meal);
         res.redirect(`/plans/${req.params.id}`);
     });
 }
