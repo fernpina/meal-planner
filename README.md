@@ -17,7 +17,7 @@
   <img src="https://imgur.com/cYmtcbg.jpg" width="800" height="400">
   
    <h3 align="center">Profile Page</h3> 
-  <img src="https://imgur.com/a/VvW7Ops.jpg" width="700" height="400">
+  <img src="https://imgur.com/a/VvW7Ops.jpg" width="800" height="400">
   
   ## :computer: Technologies Used
 
