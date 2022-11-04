@@ -16,9 +16,6 @@
    <h3>Feed Page</h3> 
   <img src="https://imgur.com/cYmtcbg.jpg" width="800" height="400">
   
-   <h3 align="center">Profile Page</h3> 
-  <img src="https://imgur.com/a/VvW7Ops.jpg" width="800" height="400">
-  
   ## :computer: Technologies Used
 
   ![MongoDB](https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb)
