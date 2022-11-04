@@ -13,15 +13,13 @@
   </div>
 
     
-  | <h3>Feed Page</h3> | 
+   <h3>Feed Page</h3> 
   <img src="https://imgur.com/cYmtcbg" width="800" height="400">
-  /> |
-  | <h3 align="center">Profile Page</h3> | 
+  
+   <h3 align="center">Profile Page</h3> 
   <img src="https://imgur.com/a/VvW7Ops" width="700" height="400">
   
-
-    ## :computer: Technologies Used
-  A screenshot of your app's landing page and any other screenshots of interest.
+  ## :computer: Technologies Used
 
   ![MongoDB](https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb)
   ![Express](https://img.shields.io/badge/-Express-05122A?style=flat&logo=express)
@@ -34,3 +32,41 @@
   ![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)
   ![Github](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)
   ![VSCode](https://img.shields.io/badge/-VS_Code-05122A?style=flat&logo=visualstudio)
+
+  ## :fire: Getting Started
+
+<details open>
+  <summary> Create Plan Type </summary>
+    1. Click Create tab.
+    2. Add Name.
+    3. Select Plan Type.
+</details>
+
+<details>
+  <summary> Add meals </summary>
+    1. Click on Plans tab.
+    2. Select add meal option.
+    3. Insert meals along with proteins, fats and carbs.
+</details>
+
+<details open>
+  <summary> Trello Board </summary>
+  <a href="https://trello.com/b/Qan9lUpr/meal-planner"
+    > https://trello.com/b/Qan9lUpr/meal-planner </a
+  >
+</details>
+
+<details open>
+  <summary> Deployed Link (Heroku) </summary>
+  <a href="https://meal-planner-926.herokuapp.com/"
+    > https://meal-planner-926.herokuapp.com/ </a
+  >
+</details>
+
+## :satellite: Upcoming Features
+
+- [:x:] Notifications 
+
+- [:x:] Sharing progress and meals with friends
+
+- [:x:] Recipes
