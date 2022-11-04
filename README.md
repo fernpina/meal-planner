@@ -21,6 +21,6 @@
     width="700"
   /> |
   | <h3 align="center">Profile Page</h3> | <img
-  src="https://imgur.com/a/4tGlC2x"
+  src="Screen Shot 2022-11-04 at 1.15.46 AM.pngScreen Shot 2022-11-04 at 1.15.46 AM.png"
   width="700"
   /> |
